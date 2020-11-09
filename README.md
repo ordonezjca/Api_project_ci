@@ -1,2 +1,2 @@
 # Api_project_ci
-Api continuous integration projec Politecnico Grancolombiano 
+Api continuous integration project Politecnico Grancolombiano 
