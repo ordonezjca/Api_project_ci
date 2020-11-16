@@ -3,6 +3,7 @@
 echo 'Begin'
 
 pipeline {
+    agent { label "include" && "!exclude" }
     stages {
         stage('build') {
             steps {
