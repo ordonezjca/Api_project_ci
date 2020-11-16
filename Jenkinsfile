@@ -8,7 +8,16 @@ pipeline {
         stage('build') {
             steps {
                 sh 'npm --version'
-                sh 'npm start'
+            }
+        }
+        stage('Initialize') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'npm test'
             }
         }
     }
