@@ -3,7 +3,7 @@
 echo 'Begin'
 
 pipeline {
-    agent { docker { image 'node:14-alpine' } }
+    agent { 'First agent' }
     stages {
         stage('build') {
             steps {
