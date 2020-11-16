@@ -3,7 +3,7 @@
 echo 'Begin'
 
 pipeline {
-    agent { 'First agent' }
+    agent { any }
     stages {
         stage('build') {
             steps {
