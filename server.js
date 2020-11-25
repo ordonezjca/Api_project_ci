@@ -1,4 +1,4 @@
-// Get our dependencies
+// Llamar las dependencias
 var express = require('express');
 var app = express();
 var mysql = require("mysql");
@@ -19,13 +19,13 @@ function getMovies(callback) {
         );    
 }
 
-//Testing endpoint
+//Pruebas del endpoint
 app.get('/', function(req, res){
   var response = [{response : 'hello'}, {code : '200'}]
   res.json(response);
 })
 
-// Implement the movies API endpoint
+// Implementación del endpoint de movies API
 app.get('/movies', function(req, res){
   var movies = [
     {title : 'Suicide Squad', release: '2016', score: 8, reviewer: 'Robert Smith', publication : 'The Daily Reviewer'},    
@@ -41,15 +41,15 @@ app.get('/movies', function(req, res){
 })
 
 app.get('/', function(req, res, next) {   
-    //now you can call the get-driver, passing a callback function
+    //Ahora se puede llamar el get-driver, pasando una función callback 
     getMovies(function (err, moviesResult){ 
-       //you might want to do something is err is not null...      
+       //Podrias querer hacer algo si el error no es null
        res.json(moviesResult);
 
     });
 });
 
-// Implement the reviewers API endpoint
+//Implementar los reviewers API endpoint 
 app.get('/reviewers', function(req, res){
   var authors = [
     {name : 'Robert Smith', publication : 'The Daily Reviewer', avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/angelcolberg/128.jpg'},
@@ -64,7 +64,7 @@ app.get('/reviewers', function(req, res){
   res.json(authors);
 })
 
-// Implement the publications API endpoint
+// Implementar el endpoint de publications API
 app.get('/publications', function(req, res){
   var publications = [
     {name : 'The Daily Reviewer', avatar: 'glyphicon-eye-open'},
@@ -79,7 +79,7 @@ app.get('/publications', function(req, res){
   res.json(publications);
 })
 
-// Implement the pending reviews API endpoint
+// Implementación de los reviews pendientes del API endpoint
 app.get('/pending', function(req, res){
   var pending = [
     {title : 'Superman: Homecoming', release: '2017', score: 10, reviewer: 'Chris Harris', publication: 'International Movie Critic'},
@@ -89,6 +89,6 @@ app.get('/pending', function(req, res){
   res.json(pending);
 })
 console.log("server listening through port: "+process.env.PORT);
-// Launch our API Server and have it listen on port 3000.
+// Launch our API Server and have it listen on port 3000. Lanzar nuestro API server y ponerlo a que escuche el puerto 3000.
 app.listen(process.env.PORT || 3000);
 module.exports = app;
