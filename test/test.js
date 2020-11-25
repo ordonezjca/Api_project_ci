@@ -1,17 +1,17 @@
 process.env.NODE_ENV = 'test';
 
-//Require the dev-dependencies
+//Solicitar las dependencias
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let server = require('../server');
 let should = chai.should();
 
 chai.use(chaiHttp);
-//Our parent block
+
 describe('API', () => {
 
 /*
-  * Test the /GET route
+  * Probar el  /GET route
   */
   describe('/GET home', () => {
       it('it should GET any reply', (done) => {
