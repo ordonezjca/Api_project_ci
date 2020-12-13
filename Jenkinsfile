@@ -1,5 +1,4 @@
 
-/*
 echo 'Begin'
 
 pipeline {
@@ -21,7 +20,7 @@ pipeline {
             }
         }
     }
-} */
+}
 
 node {
     def app
