@@ -2,7 +2,9 @@
 echo 'Begin'
 
 pipeline {
-    agent { label "include" && "!exclude" }
+    agent any
+	tools {nodejs "Node"}
+	
     stages {
         stage('build') {
             steps {
