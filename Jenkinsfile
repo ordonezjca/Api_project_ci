@@ -35,7 +35,7 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        app = docker.build("jeffry-hernandez/Api_project_ci")
+        app = docker.build("jeffry-hernandez/api_project_ci")
     }
 
     stage('Test image') {
